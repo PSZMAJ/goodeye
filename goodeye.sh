@@ -141,7 +141,7 @@ echo -e " [08]  \e[31m Uruchom ladunek w telefonie i przejmij kontrole \e[0m"
 echo -e " [09]  \e[31m Pobierz wszystkie pliki z telefonu \e[0m"
 echo -e " [10]  \e[31m Wyslij wiadomosc SMS \e[0m"
 echo -e " [11]  \e[31m Nagrywanie erkanu smartfona i zacieranie sladow \e[0m"
-echo -e " [12]  \e[31m Otworz strone www na urzadzeniu \e[0m"
+echo -e " [12]  \e[31m Otworz strone www na urzadzeniu \e[0m "
 
 
 
