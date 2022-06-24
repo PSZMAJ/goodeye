@@ -9,7 +9,7 @@ Używanie GoodEye do atakowania celów bez uprzedniej wzajemnej zgody jest niele
 
 ### Screenshot
 
-![Alt text](https://raw.githubusercontent.com/PSZMAJ/Lazy_nmap/main/photo/goodeye.PNG "GoodEye")
+![Alt text](https://raw.githubusercontent.com/PSZMAJ/goodeye/main/photo/goodeye.PNG "GoodEye")
 
 
 
