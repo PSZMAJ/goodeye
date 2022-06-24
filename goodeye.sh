@@ -107,6 +107,8 @@ otworz_strone()
 {
 	echo " Podaj adres strony do otwarcia na urzadzeniu, ex. https://www.google.pl "
 	read website
+	adb shell input keyevent 82
+	sleep 2
 	adb shell am start -a android.intent.action.VIEW -d $website
 	sudo ./goodeye.sh
 }
