@@ -20,13 +20,13 @@ przygotuj_srodowisko()
 pokaz_dostepne_cele()
 {	
 	echo -e "\e[35m Dostepne cele w Twojej sieci to: \e[0m"
-	sudo nmap -sP $IP_brama/24 | grep '(1' | awk '{print$5$6}'
+	sudo nmap -sP $IP_brama/24 | grep 'report' | awk '{print$5$6}'
 	sudo ./goodeye.sh
 }
 
 polacz_z_celem()
 {
-	sudo nmap -sP $IP_brama/24 | grep '(1' | awk '{print$5$6}'	
+	sudo nmap -sP $IP_brama/24 | grep 'report' | awk '{print$5$6}'	
 	echo "podaj IP celu"
 	read cel
 	sudo adb connect $cel:5555
