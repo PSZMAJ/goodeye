@@ -9,6 +9,7 @@ UE="$(adb devices | grep 1 | awk {'print$1'})"
 przygotuj_srodowisko()
 {	
 	sudo apt-get install android-tools-adb
+	sudo apt-get install scrcpy 
 	adb tcpip 5555
 	clear
 	sudo ./goodeye.sh
@@ -131,6 +132,12 @@ zaladuj_i_uruchom_dzwiek()
 	sudo ./goodeye.sh
 
 }
+zdalne_sterowanie()
+
+{
+	scrcpy --tcpip=$UE
+	sudo ./goodeye.sh
+}
 
 
 figlet GOOD EYE
@@ -140,7 +147,7 @@ echo "|---------------------------------|"
 echo "| Stworzono przez Przemyslaw Szmaj|"
 echo "| INSTA: _h4ker                   |"
 echo "| STRONA: www.ehaker.pl           |"
-echo "| Good Eye, wersja 1.1            |"
+echo "| Good Eye, wersja 1.2            |"
 echo "| Narzedzie stworzone w celu      |"
 echo "| EDUKACYJNYM                     |"
 echo "|---------------------------------|"
@@ -162,9 +169,10 @@ echo -e " [07]  \e[31m Wgraj ladunek do celu \e[0m"
 echo -e " [08]  \e[31m Uruchom ladunek w telefonie i przejmij kontrole \e[0m"
 echo -e " [09]  \e[31m Pobierz wszystkie pliki z telefonu \e[0m"
 echo -e " [10]  \e[31m Wyslij wiadomosc SMS \e[0m"
-echo -e " [11]  \e[31m Nagrywanie erkanu smartfona i zacieranie sladow \e[0m"
+echo -e " [11]  \e[31m Nagrywanie ekranu smartfona i zacieranie sladow \e[0m"
 echo -e " [12]  \e[31m Otworz strone www na urzadzeniu \e[0m "
 echo -e " [13]  \e[31m Zaladuj plik muzyczny i odtworz w smartfonie \e[0m "
+echo -e " [14]  \e[31m Zdalne sterowanie Smartfonem \e[0m "
 
 
 
@@ -186,6 +194,7 @@ case "$opcja" in
   "11") nagraj_ekran ;;
   "12") otworz_strone ;;  
   "13") zaladuj_i_uruchom_dzwiek ;;
+  "14") zdalne_sterowanie ;;
 
   
 
