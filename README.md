@@ -1,4 +1,4 @@
-# GoodEye v1.0
+# GoodEye v1.2
 ## Autor: Przemyslaw Szmaj
 ### Narzedzie automatyzujace hakowanie urządzeń z systemem Android.
 
