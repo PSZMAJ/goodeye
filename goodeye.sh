@@ -9,6 +9,14 @@ UE="$(adb devices | grep 1 | awk {'print$1'})"
 przygotuj_srodowisko()
 {	
 	sudo apt-get install android-tools-adb
+	sudo apt install ffmpeg libsdl2-2.0-0 adb wget \
+                 gcc git pkg-config meson ninja-build libsdl2-dev \
+                 libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev \
+                 libswresample-dev libusb-1.0-0 libusb-1.0-0-dev
+        git clone https://github.com/Genymobile/scrcpy
+        cd scrcpy
+        ./install_release.sh
+        cd ..       
 	sudo apt-get install scrcpy 
 	adb tcpip 5555
 	clear
@@ -161,7 +169,7 @@ echo "|---------------------------------|"
 echo "| Stworzono przez Przemyslaw Szmaj|"
 echo "| INSTA: _h4ker                   |"
 echo "| STRONA: www.ehaker.pl           |"
-echo "| Good Eye, wersja 1.3            |"
+echo "| Good Eye, wersja 1.4            |"
 echo "| Narzedzie stworzone w celu      |"
 echo "| EDUKACYJNYM                     |"
 echo "|---------------------------------|"
